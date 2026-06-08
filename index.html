@@ -67,10 +67,20 @@
         padding-bottom:10px;
     }
 
+    .subcategoria{
+        margin-top:20px;
+        margin-bottom:10px;
+        color:#519872;
+        font-size:20px;
+        border-left:5px solid #519872;
+        padding-left:10px;
+    }
+
     .item{
         display:flex;
         justify-content:space-between;
-        padding:10px 0;
+        align-items:flex-start;
+        padding:12px 0;
         border-bottom:1px solid #ddd;
     }
 
@@ -80,10 +90,22 @@
 
     .nombre{
         font-weight:bold;
+        font-size:16px;
     }
+
+    .descripcion{
+        display:block;
+        font-size:14px;
+        color:#666;
+        margin-top:4px;
+        max-width:600px;
+    }
+
     .precio{
         color:#27ae60;
         font-weight:bold;
+        margin-left:15px;
+        white-space:nowrap;
     }
 
     footer{
@@ -99,86 +121,176 @@
 <body>
 
 <header>
-    <h1>Menú Digital</h1>
-    <p>Bienvenido</p>
+    <h1>🍽️ Dos Tiempos</h1>
+    <p>Menú Digital</p>
 </header>
 
 <nav>
     <ul>
         <li><a href="#alimentos">Alimentos</a></li>
         <li><a href="#bebidas">Bebidas</a></li>
-        <li><a href="#snacks">Snacks</a></li>
+        <li><a href="#extras">Extras</a></li>
     </ul>
 </nav>
 
 <div class="container">
 
+    <!-- ALIMENTOS -->
     <section id="alimentos" class="categoria">
-        <h2>Alimentos</h2>
+        <h2>🍴 Alimentos</h2>
 
         <div class="item">
-            <span class="nombre">Chilaquiles sencillos</span>
+            <div>
+                <span class="nombre">Chilaquiles Sencillos</span>
+                <span class="descripcion">
+                    Totopos bañados en salsa roja o verde, acompañados de crema, queso fresco y cebolla.
+                </span>
+            </div>
             <span class="precio">$110</span>
         </div>
 
         <div class="item">
-            <span class="nombre">Birriaquiles</span>
+            <div>
+                <span class="nombre">Birriaquiles</span>
+                <span class="descripcion">
+                    Chilaquiles con birria de res, queso gratinado y consomé de la casa.
+                </span>
+            </div>
             <span class="precio">$175</span>
         </div>
 
         <div class="item">
-            <span class="nombre">Chilakillers</span>
+            <div>
+                <span class="nombre">Chilakillers</span>
+                <span class="descripcion">
+                    Chilaquiles con proteína, queso gratinado, aguacate y acompañamientos especiales.
+                </span>
+            </div>
             <span class="precio">$180</span>
         </div>
 
         <div class="item">
-            <span class="nombre">Torta de chilaquiles</span>
+            <div>
+                <span class="nombre">Torta de Chilaquiles</span>
+                <span class="descripcion">
+                    Bolillo relleno de chilaquiles con crema, queso y proteína a elegir.
+                </span>
+            </div>
             <span class="precio">$140</span>
         </div>
     </section>
 
+    <!-- BEBIDAS -->
     <section id="bebidas" class="categoria">
-        <h2>Bebidas</h2>
-        
+        <h2>🥤 Bebidas</h2>
+
+        <h3 class="subcategoria">🍊 Jugos Naturales</h3>
+
         <div class="item">
-            <span class="nombre">Naranja</span>
+            <div>
+                <span class="nombre">Naranja</span>
+                <span class="descripcion">
+                    Jugo de naranja natural recién exprimido.
+                </span>
+            </div>
             <span class="precio">$80</span>
         </div>
 
         <div class="item">
-            <span class="nombre">Verde</span>
+            <div>
+                <span class="nombre">Verde</span>
+                <span class="descripcion">
+                    Combinación de piña, apio, nopal y naranja.
+                </span>
+            </div>
+            <span class="precio">$75</span>
+        </div>
+
+        <h3 class="subcategoria">🥤 Aguas Frescas</h3>
+
+        <div class="item">
+            <div>
+                <span class="nombre">Horchata</span>
+                <span class="descripcion">
+                    Preparada de forma tradicional.
+                </span>
+            </div>
+            <span class="precio">$45</span>
+        </div>
+
+        <div class="item">
+            <div>
+                <span class="nombre">Jamaica</span>
+                <span class="descripcion">
+                    Refrescante agua natural de flor de jamaica.
+                </span>
+            </div>
+            <span class="precio">$45</span>
+        </div>
+
+        <h3 class="subcategoria">💪 Batidos de Proteína</h3>
+
+        <div class="item">
+            <div>
+                <span class="nombre">Energético</span>
+                <span class="descripcion">
+                    Proteína, plátano, avena y leche.
+                </span>
+            </div>
             <span class="precio">$75</span>
         </div>
 
         <div class="item">
-            <span class="nombre">Energetico</span>
-            <span class="precio">$75</span>
+            <div>
+                <span class="nombre">Chocolate Protein</span>
+                <span class="descripcion">
+                    Proteína sabor chocolate mezclada con leche y hielo.
+                </span>
+            </div>
+            <span class="precio">$85</span>
         </div>
     </section>
 
-    <section id="snacks" class="categoria">
-        <h2>Extras</h2>
+    <!-- EXTRAS -->
+    <section id="extras" class="categoria">
+        <h2>➕ Extras</h2>
 
         <div class="item">
-            <span class="nombre">Papas a la Francesa</span>
+            <div>
+                <span class="nombre">Papas a la Francesa</span>
+                <span class="descripcion">
+                    Crujientes y recién preparadas.
+                </span>
+            </div>
             <span class="precio">$60</span>
         </div>
 
         <div class="item">
-            <span class="nombre">Nachos</span>
+            <div>
+                <span class="nombre">Nachos</span>
+                <span class="descripcion">
+                    Totopos con queso y complementos.
+                </span>
+            </div>
             <span class="precio">$75</span>
         </div>
 
         <div class="item">
-            <span class="nombre">Palomitas</span>
+            <div>
+                <span class="nombre">Palomitas</span>
+                <span class="descripcion">
+                    Palomitas recién hechas.
+                </span>
+            </div>
             <span class="precio">$50</span>
         </div>
+
     </section>
 
 </div>
 
 <footer>
-    © 2026 Menú Digital
+    © 2026 Dos Tiempos
 </footer>
 
 </body>
