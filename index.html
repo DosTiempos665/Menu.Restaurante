@@ -1,75 +1,181 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dos Tiempos</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menú Digital</title>
 
-    <style>
-        body{
-            margin:0;
-            font-family: Arial, sans-serif;
-        }
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: Arial, sans-serif;
+    }
 
-        nav{
-            background-color:#9DBF9E;
-            padding:15px;
-        }
+    body{
+        background:#f5f5f5;
+    }
 
-        nav ul{
-            list-style:none;
-            margin:0;
-            padding:0;
-            display:flex;
-            justify-content:center;
-        }
+    header{
+        background:#2c3e50;
+        color:white;
+        text-align:center;
+        padding:25px;
+    }
 
-        nav ul li{
-            margin:0 20px;
-        }
+    nav{
+        background:#34495e;
+        padding:15px;
+    }
 
-        nav ul li a{
-            color:white;
-            text-decoration:none;
-            font-size:18px;
-            font-weight:bold;
-        }
+    nav ul{
+        list-style:none;
+        display:flex;
+        justify-content:center;
+        gap:30px;
+    }
 
-        nav ul li a:hover{
-            color:#ffd60a;
-        }
-    </style>
+    nav a{
+        color:white;
+        text-decoration:none;
+        font-weight:bold;
+    }
+
+    nav a:hover{
+        color:#f1c40f;
+    }
+
+    .container{
+        width:90%;
+        max-width:1000px;
+        margin:30px auto;
+    }
+
+    .categoria{
+        background:white;
+        margin-bottom:25px;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .categoria h2{
+        color:#2c3e50;
+        margin-bottom:15px;
+        border-bottom:2px solid #f1c40f;
+        padding-bottom:10px;
+    }
+
+    .item{
+        display:flex;
+        justify-content:space-between;
+        padding:10px 0;
+        border-bottom:1px solid #ddd;
+    }
+
+    .item:last-child{
+        border-bottom:none;
+    }
+
+    .nombre{
+        font-weight:bold;
+    }
+
+    .precio{
+        color:#27ae60;
+        font-weight:bold;
+    }
+
+    footer{
+        text-align:center;
+        padding:20px;
+        background:#2c3e50;
+        color:white;
+        margin-top:30px;
+    }
+</style>
 </head>
+
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
+<header>
+    <h1>🍽 Menú Digital</h1>
+    <p>Bienvenido</p>
+</header>
 
-    <section id="inicio">
-        <h1></h1>
-        <p>Contenido de inicio.</p>
+<nav>
+    <ul>
+        <li><a href="#alimentos">Alimentos</a></li>
+        <li><a href="#bebidas">Bebidas</a></li>
+        <li><a href="#snacks">Snacks</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
+    <section id="alimentos" class="categoria">
+        <h2> Alimentos</h2>
+
+        <div class="item">
+            <span class="nombre">Hamburguesa Clásica</span>
+            <span class="precio">$120</span>
+        </div>
+
+        <div class="item">
+            <span class="nombre">Tacos (Orden)</span>
+            <span class="precio">$95</span>
+        </div>
+
+        <div class="item">
+            <span class="nombre">Pizza Individual</span>
+            <span class="precio">$140</span>
+        </div>
     </section>
 
-    <section id="nosotros">
-        <h1>Nosotros</h1>
-        <p>Información de la empresa.</p>
+    <section id="bebidas" class="categoria">
+        <h2>🥤 Bebidas</h2>
+
+        <div class="item">
+            <span class="nombre">Refresco</span>
+            <span class="precio">$30</span>
+        </div>
+
+        <div class="item">
+            <span class="nombre">Agua Natural</span>
+            <span class="precio">$20</span>
+        </div>
+
+        <div class="item">
+            <span class="nombre">Café</span>
+            <span class="precio">$35</span>
+        </div>
     </section>
 
-    <section id="servicios">
-        <h1>Servicios</h1>
-        <p>Descripción de servicios.</p>
+    <section id="snacks" class="categoria">
+        <h2> Snacks</h2>
+
+        <div class="item">
+            <span class="nombre">Papas a la Francesa</span>
+            <span class="precio">$60</span>
+        </div>
+
+        <div class="item">
+            <span class="nombre">Nachos</span>
+            <span class="precio">$75</span>
+        </div>
+
+        <div class="item">
+            <span class="nombre">Palomitas</span>
+            <span class="precio">$50</span>
+        </div>
     </section>
 
-    <section id="contacto">
-        <h1>Contacto</h1>
-        <p>Datos de contacto.</p>
-    </section>
+</div>
+
+<footer>
+    © 2026 Menú Digital
+</footer>
 
 </body>
 </html>
