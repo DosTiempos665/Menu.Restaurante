@@ -7,33 +7,35 @@
     <!-- Fuentes tipográficas refinadas de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         /* --- VARIABLES DE DISEÑO --- */
         :root {
-            --bg-global: #f5f3ec;       /* Fondo crema sutil */
-            --bg-menu: #fdfcf9;         /* Fondo del contenedor del menú */
-            --green-primary: #4a5849;   /* Verde oliva oscuro principal */
-            --green-accent: #718370;    /* Verde oliva medio para detalles */
-            --text-dark: #2c352b;       /* Texto principal */
-            --text-muted: #616e60;      /* Descripciones */
-            --gold-subtle: #c2b29a;     /* Toques dorados de lujo */
-            --shadow-premium: 0 15px 50px rgba(44, 53, 43, 0.05);
+            --bg-global: radial-gradient(circle at top, #fcfbfa 0%, #f1eee4 100%); /* Fondo con textura de luz */
+            --bg-menu: #ffffff;         /* Contenedor blanco puro para contraste */
+            --green-primary: #3b473a;   /* Verde oliva profundo y formal */
+            --green-accent: #5c6e5a;    /* Verde medio */
+            --gold-accent: #b89c66;     /* Dorado elegante para dar vida */
+            --gold-subtle: #d6caaf;     /* Dorado suave para líneas */
+            --text-dark: #242b23;       /* Texto principal legible */
+            --text-muted: #556153;      /* Descripciones */
+            --shadow-premium: 0 20px 60px rgba(59, 71, 58, 0.07), 0 1px 3px rgba(0,0,0,0.02);
         }
 
         /* --- ESTILOS BASE --- */
         * {
             box-sizing: border-box;
-            transition: all 0.3s ease;
+            transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         body {
-            background-color: var(--bg-global);
+            background: var(--bg-global);
+            background-attachment: fixed;
             font-family: 'Montserrat', sans-serif;
             color: var(--text-dark);
             margin: 0;
-            padding: 40px 20px;
+            padding: 50px 20px;
             display: flex;
             justify-content: center;
             -webkit-font-smoothing: antialiased;
@@ -42,155 +44,175 @@
         /* --- CONTENEDOR ÚNICO CONTINUO --- */
         .menu-wrapper {
             background-color: var(--bg-menu);
-            max-width: 900px;
+            max-width: 940px;
             width: 100%;
-            padding: 60px 80px;
+            padding: 80px 90px;
             box-shadow: var(--shadow-premium);
-            border-radius: 4px;
+            border-radius: 8px;
             position: relative;
+            border: 1px solid rgba(184, 156, 102, 0.15);
         }
 
-        /* Elegante marco interior continuo */
+        /* Elegante marco interior decorativo */
         .menu-wrapper::after {
             content: '';
             position: absolute;
-            top: 25px;
-            bottom: 25px;
-            left: 25px;
-            right: 25px;
-            border: 1px solid rgba(74, 88, 73, 0.12);
+            top: 30px;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            border: 1px solid rgba(59, 71, 58, 0.08);
             pointer-events: none;
-            border-radius: 2px;
+            border-radius: 4px;
         }
 
-        /* --- ENCABEZADO PRINCIPAL (SOLO APARECE UNA VEZ ARRIBA) --- */
+        /* --- ENCABEZADO PRINCIPAL (SOLO EN PRIMERA HOJA VIRTUAL) --- */
         .main-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid var(--green-primary);
-            padding-bottom: 25px;
-            margin-bottom: 60px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .logo-box {
-            background-color: var(--green-primary);
-            color: var(--bg-menu);
-            padding: 12px 45px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-        }
-
-        .logo-box h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            margin: 0;
-            font-weight: 400;
-            line-height: 1;
-        }
-
-        .brand-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.4rem;
-            color: var(--green-primary);
-            font-style: italic;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        /* --- SEPARADORES DE BLOQUES (SECCIONES GENERALES) --- */
-        .menu-section {
+            text-align: center;
+            border-bottom: 1px solid var(--gold-subtle);
+            padding-bottom: 40px;
             margin-bottom: 70px;
             position: relative;
             z-index: 2;
         }
 
-        /* Título grande para marcar los cambios de sección de manera corrida */
-        .section-separator-title {
+        .main-header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            margin: 0 0 10px 0;
+            font-weight: 400;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--green-primary);
+        }
+
+        .brand-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2.2rem;
+            color: var(--gold-accent);
+            font-style: italic;
+            font-weight: 500;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .header-decor {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--gold-accent);
+            font-size: 0.8rem;
+            letter-spacing: 5px;
+        }
+
+        /* --- SEPARADORES DE BLOQUES --- */
+        .menu-section {
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-separator-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
             color: var(--green-primary);
             text-transform: uppercase;
             letter-spacing: 4px;
-            font-weight: 600;
-            margin: 0 0 40px 0;
+            font-weight: 500;
+            margin: 0 0 45px 0;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
         }
 
-        /* Líneas de diseño al lado de los títulos de los bloques */
+        .section-separator-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: var(--gold-accent);
+            transform: rotate(45deg);
+        }
+
         .section-separator-title::after {
             content: '';
             flex-grow: 1;
             height: 1px;
-            background: linear-gradient(to right, rgba(74, 88, 73, 0.3), rgba(74, 88, 73, 0));
+            background: linear-gradient(to right, rgba(184, 156, 102, 0.4), rgba(184, 156, 102, 0));
         }
 
         /* --- REJILLA DE PLATILLOS (GRID) --- */
         .menu-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
         }
 
         .column {
             display: flex;
             flex-direction: column;
-            gap: 35px;
+            gap: 40px;
         }
 
         .divider-right {
-            border-right: 1px solid rgba(74, 88, 73, 0.15);
-            padding-right: 25px;
+            border-right: 1px solid rgba(184, 156, 102, 0.2);
+            padding-right: 30px;
         }
 
-        /* --- DISEÑO DE PLATILLOS (CON LÍNEA DE PUNTOS) --- */
+        /* --- DISEÑO VIVO DE PLATILLOS --- */
         .dish {
             position: relative;
+            padding-left: 0;
+            border-left: 0 solid transparent;
+        }
+
+        /* Efecto sutil interactivo para dar vida */
+        .dish:hover {
+            border-left: 3px solid var(--gold-accent);
+            padding-left: 12px;
         }
 
         .dish-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .dish-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
+            font-size: 1.65rem;
             color: var(--green-primary);
             margin: 0;
             font-weight: 600;
             background: var(--bg-menu);
-            padding-right: 8px;
+            padding-right: 10px;
             z-index: 1;
         }
 
         .dish-dots {
             flex-grow: 1;
-            border-bottom: 1px dotted rgba(74, 88, 73, 0.35);
-            margin-bottom: 5px;
+            border-bottom: 1px dotted rgba(92, 110, 90, 0.4);
+            margin-bottom: 6px;
             position: relative;
             top: -2px;
         }
 
         .dish-price {
-            font-size: 1.15rem;
-            font-weight: 500;
-            color: var(--text-dark);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--gold-accent);
             background: var(--bg-menu);
-            padding-left: 8px;
+            padding-left: 10px;
             z-index: 1;
-            letter-spacing: 0.5px;
+        }
+
+        .dish:hover .dish-price {
+            transform: translateY(-2px);
         }
 
         .dish-description {
-            font-size: 0.9rem;
-            line-height: 1.5;
+            font-size: 0.92rem;
+            line-height: 1.6;
             color: var(--text-muted);
             margin: 0;
             font-weight: 300;
@@ -199,14 +221,16 @@
         /* --- SUB-TÍTULOS INTERNOS --- */
         .inner-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
-            color: var(--green-primary);
+            font-size: 1.5rem;
+            color: var(--green-accent);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 5px 0 20px 0;
-            font-weight: 600;
-            border-bottom: 1px solid rgba(74, 88, 73, 0.15);
-            padding-bottom: 6px;
+            letter-spacing: 3px;
+            margin: 10px 0 25px 0;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(184, 156, 102, 0.25);
+            padding-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
         }
 
         /* --- ELEMENTOS DE EXTRAS --- */
@@ -214,30 +238,34 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             font-size: 0.95rem;
         }
 
         .extra-item span:first-child {
             color: var(--text-muted);
             background: var(--bg-menu);
-            padding-right: 6px;
+            padding-right: 8px;
         }
 
         .extra-item span:last-child {
             font-weight: 500;
+            color: var(--green-primary);
             background: var(--bg-menu);
-            padding-left: 6px;
+            padding-left: 8px;
         }
 
-        /* --- OMELETTES CON DISEÑO PREMIUM --- */
+        /* --- OMELETTES CON MARCO DE LUJO --- */
         .omelette-box {
-            border-left: 2px solid var(--gold-subtle);
-            padding-left: 15px;
-            margin-bottom: 20px;
+            border-left: 2px solid var(--gold-accent);
+            padding-left: 18px;
+            margin-bottom: 25px;
+            background: linear-gradient(to right, rgba(184, 156, 102, 0.02), transparent);
         }
 
         .highlight {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
             font-weight: 600;
             color: var(--green-primary);
         }
@@ -246,7 +274,7 @@
         .tags-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
             list-style: none;
             padding: 0;
             margin: 15px 0 0 0;
@@ -254,18 +282,19 @@
 
         .tags-list li {
             font-size: 0.85rem;
-            color: var(--text-muted);
+            color: var(--green-primary);
             font-weight: 500;
-            background: rgba(113, 131, 112, 0.06);
-            padding: 6px 14px;
-            border-radius: 20px;
-            border: 1px solid rgba(74, 88, 73, 0.08);
+            background: rgba(184, 156, 102, 0.07);
+            padding: 6px 16px;
+            border-radius: 4px;
+            border: 1px solid rgba(184, 156, 102, 0.15);
+            letter-spacing: 0.5px;
         }
 
         .bullet-list-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 18px;
             list-style: none;
             padding: 0;
             margin: 15px 0;
@@ -273,44 +302,77 @@
 
         .bullet-list-grid li {
             position: relative;
-            padding-left: 20px;
+            padding-left: 22px;
             font-size: 0.95rem;
             color: var(--text-muted);
         }
 
         .bullet-list-grid li::before {
-            content: "◆";
+            content: "✦";
             position: absolute;
             left: 0;
-            top: 2px;
-            color: var(--gold-subtle);
-            font-size: 0.7rem;
+            top: 1px;
+            color: var(--gold-accent);
+            font-size: 0.8rem;
         }
 
         /* --- SECCIÓN COMPLETA DE BATIDOS --- */
         .protein-block {
             grid-column: span 2;
-            margin-top: 20px;
-            border-top: 1px dashed rgba(74, 88, 73, 0.25);
-            padding-top: 35px;
+            margin-top: 25px;
+            border-top: 1px dashed rgba(184, 156, 102, 0.4);
+            padding-top: 40px;
         }
 
-        /* --- REFINAMIENTOS DE LÍNEAS EN DISEÑO CORRIDO --- */
+        /* --- DIVISORES PREMIUM --- */
         hr.premium-divider {
             border: 0;
             height: 1px;
-            background-image: linear-gradient(to right, rgba(194,178,154,0), rgba(194,178,154,0.6), rgba(194,178,154,0));
-            margin: 40px 0;
+            background-image: linear-gradient(to right, rgba(184,178,154,0), rgba(184,156,102,0.4), rgba(184,178,154,0));
+            margin: 45px 0;
         }
 
-        /* --- RESPONSIVO PARA MÓVILES --- */
+        /* ================= AJUSTES RESPONSIVOS PARA CELULAR ================= */
         @media (max-width: 768px) {
-            body { padding: 20px 10px; }
-            .menu-wrapper { padding: 40px 25px; }
-            .main-header { flex-direction: column; gap: 15px; text-align: center; }
-            .menu-grid, .bullet-list-grid { grid-template-columns: 1fr; gap: 35px; }
-            .divider-right { border-right: none; border-bottom: 1px solid rgba(74, 88, 73, 0.15); padding-right: 0; padding-bottom: 35px; }
-            .protein-block { grid-column: span 1; }
+            body { 
+                padding: 15px 10px; 
+            }
+            .menu-wrapper { 
+                padding: 50px 24px; 
+            }
+            .menu-wrapper::after {
+                display: none; 
+            }
+            .main-header { 
+                margin-bottom: 50px;
+                padding-bottom: 30px;
+            }
+            .main-header h1 {
+                font-size: 2.8rem;
+            }
+            .section-separator-title {
+                font-size: 1.9rem;
+                margin-bottom: 35px;
+            }
+            .menu-grid, .bullet-list-grid { 
+                grid-template-columns: 1fr; 
+                gap: 40px; 
+            }
+            .divider-right { 
+                border-right: none; 
+                border-bottom: 1px solid rgba(184, 156, 102, 0.2); 
+                padding-right: 0; 
+                padding-bottom: 40px; 
+            }
+            .protein-block { 
+                grid-column: span 1; 
+                margin-top: 15px;
+                padding-top: 30px;
+            }
+            .dish:hover {
+                border-left: 0 solid transparent;
+                padding-left: 0;
+            }
         }
     </style>
 </head>
@@ -318,15 +380,14 @@
 
     <div class="menu-wrapper">
         
-        <!-- ENCABEZADO PRINCIPAL (ÚNICO) -->
+        <!-- ENCABEZADO PRINCIPAL (SÓLO AQUÍ) -->
         <header class="main-header">
-            <div class="logo-box">
-                <h1>Menú</h1>
-            </div>
+            <h1>Menú</h1>
             <div class="brand-title">Dos Tiempos</div>
+            <div class="header-decor">✦ ✦ ✦</div>
         </header>
 
-        <!-- ================= SECCIÓN 1: DE LA CASA ================= -->
+        <!-- ================= SECCIÓN 1: PLATOS FUERTES ================= -->
         <section class="menu-section">
             <h2 class="section-separator-title">Platos Fuertes</h2>
             
@@ -352,9 +413,9 @@
                     </div>
 
                     <div>
-                        <h4 class="inner-title">Salsas</h4>
+                        <h4 class="inner-title">Salsas de la casa</h4>
                         <ul class="tags-list">
-                            <li>Salsa roja de la casa</li>
+                            <li>Salsa roja</li>
                             <li>Chipotle</li>
                             <li>Poblana</li>
                             <li>De temporada</li>
@@ -442,7 +503,7 @@
             </div>
         </section>
 
-        <!-- ================= SECCIÓN 2: ALGO DULCE ================= -->
+        <!-- ================= SECCIÓN 2: DESAYUNOS DULCES ================= -->
         <section class="menu-section">
             <h2 class="section-separator-title">Desayunos Dulces</h2>
             
@@ -509,7 +570,7 @@
 
                     <div class="dish" style="margin-top: 10px;">
                         <div class="dish-header">
-                            <h3 class="dish-title" style="font-style: italic; color: var(--gold-subtle);">Postre de temporada</h3>
+                            <h3 class="dish-title" style="font-style: italic; color: var(--gold-accent);">Postre de temporada</h3>
                         </div>
                         <p class="dish-description">Pregunta a nuestro equipo por la propuesta dulce artesanal del mes.</p>
                     </div>
@@ -519,7 +580,7 @@
 
         <!-- ================= SECCIÓN 3: BEBIDAS ================= -->
         <section class="menu-section" style="margin-bottom: 0;">
-            <h2 class="section-separator-title">Bebidas</h2>
+            <h2 class="section-separator-title">Bebidas &amp; Refrescantes</h2>
             
             <div class="menu-grid">
                 <!-- Columna Izquierda -->
@@ -572,10 +633,10 @@
                 <!-- Fila Completa Inferior (Batidos) -->
                 <div class="protein-block">
                     <div class="dish-header" style="margin-bottom: 0;">
-                        <h3 class="inner-title" style="margin: 0; border: none; font-size: 1.8rem;">Batidos de proteína</h3>
-                        <span class="dish-price" style="font-size: 1.4rem; color: var(--green-primary); font-weight: 600;">$95</span>
+                        <h3 class="inner-title" style="margin: 0; border: none; font-size: 1.8rem; color: var(--green-primary);">Batidos de proteína</h3>
+                        <span class="dish-price" style="font-size: 1.5rem;">$95</span>
                     </div>
-                    <p class="dish-description" style="font-style: italic; margin-bottom: 15px;">Crea tu batido ideal seleccionando tus ingredientes favoritos:</p>
+                    <p class="dish-description" style="font-style: italic; margin-bottom: 20px;">Crea tu batido ideal seleccionando tus ingredientes favoritos:</p>
                     
                     <ul class="bullet-list-grid">
                         <li>Plátano</li>
