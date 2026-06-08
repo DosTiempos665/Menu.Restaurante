@@ -1,468 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menú Dos Tiempos</title>
-
-<style>
-    *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
-}
-    body{
-        background:#9DBF9E;
-    }
-
-    header{
-        background:#519872;
-        color:white;
-        text-align:center;
-        padding:25px;
-    }
-   header h1{
-    font-family:'Bebas Neue', sans-serif;
-    font-size:60px;
-    letter-spacing:3px;
-}
-
-header p{
-    font-family:'Poppins', sans-serif;
-    font-size:18px;
-    font-weight:300;
-}
-
-    nav{
-        background:#34495e;
-        padding:15px;
-    }
-
-    nav ul{
-        list-style:none;
-        display:flex;
-        justify-content:center;
-        gap:30px;
-    }
-
-    nav a{
-        color:white;
-        text-decoration:none;
-        font-weight:bold;
-    }
-
-    nav a:hover{
-        color:#f1c40f;
-    }
-
-    .container{
-        width:90%;
-        max-width:1000px;
-        margin:30px auto;
-    }
-
-    .categoria{
-        background:white;
-        margin-bottom:25px;
-        padding:20px;
-        border-radius:10px;
-        box-shadow:0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .categoria h2{
-        color:#2c3e50;
-        margin-bottom:15px;
-        border-bottom:2px solid #f1c40f;
-        padding-bottom:10px;
-    }
-
-    .subcategoria{
-        margin-top:20px;
-        margin-bottom:10px;
-        color:#519872;
-        font-size:20px;
-        border-left:5px solid #519872;
-        padding-left:10px;
-    }
-
-    .item{
-        display:flex;
-        justify-content:space-between;
-        align-items:flex-start;
-        padding:12px 0;
-        border-bottom:1px solid #ddd;
-    }
-
-    .item:last-child{
-        border-bottom:none;
-    }
-
-    .nombre{
-        font-weight:bold;
-        font-size:16px;
-    }
-
-    .descripcion{
-        display:block;
-        font-size:14px;
-        color:#666;
-        margin-top:4px;
-        max-width:600px;
-    }
-
-    .precio{
-        color:#27ae60;
-        font-weight:bold;
-        margin-left:15px;
-        white-space:nowrap;
-    }
-
-   /* BATIDOS ESTILO ESPECIAL */
-
-.batido-seccion{
-     background:#fff;
-    margin-top:25px;
-    padding:30px;
-    border-radius:10px;
-}
-
-.batido-header{
-    display:flex;
-    align-items:center;
-    gap:25px;
-    margin-bottom:10px;
-}
-
-.batido-header h2{
-    border:none;
-    padding:0;
-    margin:0;
-    color:#000000;
-    font-size:18px;
-    font-weight:700;
-}
-
-.precio-batido{
-    color:#27ae60;
-        font-weight:bold;
-        margin-left:15px;
-        white-space:nowrap;
-}
-
-.subtitulo-batido{
-    text-align:center;
-    color:#000000;
-    font-size:14px;
-    margin-bottom:30px;
-}
-
-.opciones-batido{
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:40px;
-}
-
-.opciones-batido ul{
-    list-style:disc;
-    padding-left:40px;
-    color:#0000000;
-}
-
-.opciones-batido li{
-    font-size:16px;
-    margin-bottom:18px;
-}
-
-.bases-batido{
-    display:flex;
-    justify-content:center;
-    gap:100px;
-    margin-top:40px;
-    flex-wrap:wrap;
-    color:#000000;
-    font-size:14px;
-}
-
-@media(max-width:768px){
-
-    .batido-header{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .batido-header h2{
-        font-size:14px;
-    }
-
-    .precio-batido{
-        font-size:15px;
-    }
-
-    .subtitulo-batido{
-        font-size:14px;
-    }
-
-    .opciones-batido li{
-        font-size:14px;
-    }
-
-    .bases-batido{
-        gap:14px;
-        font-size:14px;
-    }
-}
-   
-    footer{
-        text-align:center;
-        padding:20px;
-        background:#2c3e50;
-        color:white;
-        margin-top:30px;
-    }
-</style>
-</head>
-
-<body>
-
-<header>
-    <h1>Dos Tiempos</h1>
-    <p>Menú Digital</p>
-</header>
-
-<nav>
-    <ul>
-        <li><a href="#alimentos">Alimentos</a></li>
-        <li><a href="#bebidas">Bebidas</a></li>
-        <li><a href="#extras">Extras</a></li>
-    </ul>
-</nav>
-
-<div class="container">
-
-    <!-- ALIMENTOS -->
-    <section id="alimentos" class="categoria">
-        <h2>Alimentos</h2>
-
-        <div class="item">
-            <div>
-                <span class="nombre">Chilaquiles Sencillos</span>
-                <span class="descripcion">
-                    Totopos bañados en salsa de su elección, con queso mozzarella, crema, cilantro y cebolla morada, acompañado de frijoles.
-                </span>
-            </div>
-            <span class="precio">$110</span>
-        </div>
-
-        <div class="item">
-            <div>
-                <span class="nombre">Birriaquiles</span>
-                <span class="descripcion">
-                    Chilaquiles en salsa de su elección acompañados con birria de res y frijoles.
-                </span>
-            </div>
-            <span class="precio">$175</span>
-        </div>
-
-        <div class="item">
-            <div>
-                <span class="nombre">Chilakillers</span>
-                <span class="descripcion">
-                    Chilaquiles en salsa de su elección acompañados de huevo al gusto, chicharron y frijoles.
-                </span>
-            </div>
-            <span class="precio">$180</span>
-        </div>
-
-        <div class="item">
-            <div>
-                <span class="nombre">Torta de Chilaquiles</span>
-                <span class="descripcion">
-                    Torta con totopos bañados en salsa de su elección con queso, crema, cilantro, cebolla morada y huevo al gusto.
-                </span>
-            </div>
-            <span class="precio">$140</span>
-        </div>
-    </section>
-
-    <!-- BEBIDAS -->
-    <section id="bebidas" class="categoria">
-        <h2>Bebidas</h2>
-
-      <h3 class="subcategoria"></h3>
-
-        <div class="item">
-            <div>
-                <span class="nombre">Chocomilk</span>
-                
-                    
-                </span>
-            </div>
-            <span class="precio">$45</span>
-        </div>
-
-        <div class="item">
-            <div>
-                <span class="nombre">Café  americano</span>
-                
-                </span>
-            </div>
-            <span class="precio">$45</span>
-        </div>
-
-          <div class="item">
-            <div>
-                <span class="nombre">Sodas</span>
-                </span>
-            </div>
-            <span class="precio">$35</span>
-        </div>
-       
-        <h3 class="subcategoria"> Jugos Naturales</h3>
-
-        <div class="item">
-            <div>
-                <span class="nombre">Naranja</span>
-                <span class="descripcion">
-                    Jugo de naranja natural.
-                </span>
-            </div>
-            <span class="precio">$80</span>
-        </div>
-
-        <div class="item">
-            <div>
-                <span class="nombre">Verde</span>
-                <span class="descripcion">
-                    Combinación de piña, apio, nopal, pepino, espinaca, perejil, manzana verde y jugo de naranja.
-                </span>
-            </div>
-            <span class="precio">$75</span>
-        </div>
-
-          <div class="item">
-            <div>
-                <span class="nombre">Energético</span>
-                <span class="descripcion">
-                    Platano, fresa, blueberry, piña y jugo de naranja.
-                </span>
-            </div>
-            <span class="precio">$75</span>
-        </div>
-       
-
-        <h3 class="subcategoria">Aguas Frescas</h3>
-
-        <div class="item">
-            <div>
-                <span class="nombre">Agua de jamaica</span>
-               
-                </span>
-            </div>
-            <span class="precio">$45</span>
-        </div>
-
-        <div class="item">
-            <div>
-                <span class="nombre">Agua de limón</span>
-                
-                </span>
-            </div>
-            <span class="precio">$45</span>
-        </div>
-
-        <div class="item">
-            <div>
-                <span class="nombre">Agua de temporada</span>
-                
-                </span>
-            </div>
-            <span class="precio">$50</span>
-        </div>
-      <div class="batido-seccion">
-
-         <h3 class="subcategoria">Batidos de Proteína</h3>
-         
-    <div class="batido-header">
-        
-        <span class="precio">$95</span>
-    </div>
-
-    <p class="subtitulo-batido">(Crea tu batido)</p>
-
-    <div class="opciones-batido">
-
-        <ul>
-            <li>Plátano</li>
-            <li>Fresa</li>
-            <li>Blueberry</li>
-            <li>Fruta de temporada</li>
-        </ul>
-
-        <ul>
-            <li>Scoop vainilla</li>
-            <li>Scoop chocolate</li>
-        </ul>
-
-    </div>
-
-    <div class="bases-batido">
-        <span>• Base de agua</span>
-        <span>• Base de leche</span>
-    </div>
-
-</div>
-        
-    </section>
-
-
-   
-    <!-- EXTRAS -->
-    <section id="extras" class="categoria">
-        <h2>Extras</h2>
-
-        <div class="item">
-            <div>
-                <span class="nombre">Papas a la Francesa</span>
-                <span class="descripcion">
-                    Crujientes y recién preparadas.
-                </span>
-            </div>
-            <span class="precio">$60</span>
-        </div>
-
-        <div class="item">
-            <div>
-                <span class="nombre">Nachos</span>
-                <span class="descripcion">
-                    Totopos con queso y complementos.
-                </span>
-            </div>
-            <span class="precio">$75</span>
-        </div>
-
-        <div class="item">
-            <div>
-                <span class="nombre">Palomitas</span>
-                <span class="descripcion">
-                    Palomitas recién hechas.
-                </span>
-            </div>
-            <span class="precio">$50</span>
-        </div>
-
-    </section>
-
-</div>
-
-<footer>
-    © 2026 Dos Tiempos
-</footer>
-
-</body>
-</html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Premium - Dos Tiempos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- VARIABLES DE DISEÑO (Para fácil personalización) --- */
+        :root {
+            --bg-global: #f4f1ea;       /* Crema de fondo suave */
+            --bg-card: #fbfaf7;         /* Blanco roto premium para las hojas */
+            --green-primary: #4a5849;   /* Verde oliva oscuro elegante */
+            --green-accent: #718370;    /* Verde oliva medio para detalles */
+            --text-dark: #2c352b;       /* Color de texto principal casi negro */
+            --text-muted: #616e60;      /* Color de descripciones */
+            --gold-subtle: #c2b29a;     /* Toque dorado apagado para detalles de lujo */
+            --shadow-premium: 0 20px 40px rgba(44, 53, 43, 0.06);
+        }
+
+        /* --- ESTILOS BASE Y ANIMACIONES --- */
+        * {
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-global);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 60px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- CONTENEDOR ESTILO "HOJA DE MENÚ" --- */
+        .menu-page {
+            background-color: var(--bg-card);
+            max-width: 900px;
+            width: 100%;
+            padding: 60px;
+            border-radius: 4px;
+            box-shadow: var(--shadow-premium);
+            border: 1px solid rgba(194, 178, 154, 0.2); /* Borde dorado sutil */
+            position: relative;
+        }
+
+        /* Efecto elegante al pasar el cursor sobre la hoja */
+        .menu-page:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px rgba(44, 53, 43, 0.1);
+        }
+
+        /* Marco interior fino clásico de restaurante */
+        .menu-page::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            border: 1px solid rgba(74, 88, 73, 0.15);
+            pointer-events: none;
+            border-radius: 2px;
+        }
+
+        /* --- ENCABEZADOS DE LUJO --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--green-primary);
+            padding-bottom: 20px;
+            margin-bottom: 45
