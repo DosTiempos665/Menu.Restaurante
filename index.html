@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Premium - Dos Tiempos</title>
+    <title>Menú - Dos Tiempos</title>
+    <!-- Fuentes tipográficas refinadas de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- VARIABLES DE DISEÑO (Para fácil personalización) --- */
+        /* --- VARIABLES DE DISEÑO --- */
         :root {
-            --bg-global: #f4f1ea;       /* Crema de fondo suave */
-            --bg-card: #fbfaf7;         /* Blanco roto premium para las hojas */
-            --green-primary: #4a5849;   /* Verde oliva oscuro elegante */
+            --bg-global: #f5f3ec;       /* Fondo crema sutil */
+            --bg-menu: #fdfcf9;         /* Fondo del contenedor del menú */
+            --green-primary: #4a5849;   /* Verde oliva oscuro principal */
             --green-accent: #718370;    /* Verde oliva medio para detalles */
-            --text-dark: #2c352b;       /* Color de texto principal casi negro */
-            --text-muted: #616e60;      /* Color de descripciones */
-            --gold-subtle: #c2b29a;     /* Toque dorado apagado para detalles de lujo */
-            --shadow-premium: 0 20px 40px rgba(44, 53, 43, 0.06);
+            --text-dark: #2c352b;       /* Texto principal */
+            --text-muted: #616e60;      /* Descripciones */
+            --gold-subtle: #c2b29a;     /* Toques dorados de lujo */
+            --shadow-premium: 0 15px 50px rgba(44, 53, 43, 0.05);
         }
 
-        /* --- ESTILOS BASE Y ANIMACIONES --- */
+        /* --- ESTILOS BASE --- */
         * {
             box-sizing: border-box;
             transition: all 0.3s ease;
@@ -32,60 +33,51 @@
             font-family: 'Montserrat', sans-serif;
             color: var(--text-dark);
             margin: 0;
-            padding: 60px 20px;
+            padding: 40px 20px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 60px;
+            justify-content: center;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- CONTENEDOR ESTILO "HOJA DE MENÚ" --- */
-        .menu-page {
-            background-color: var(--bg-card);
+        /* --- CONTENEDOR ÚNICO CONTINUO --- */
+        .menu-wrapper {
+            background-color: var(--bg-menu);
             max-width: 900px;
             width: 100%;
-            padding: 60px;
-            border-radius: 4px;
+            padding: 60px 80px;
             box-shadow: var(--shadow-premium);
-            border: 1px solid rgba(194, 178, 154, 0.2); /* Borde dorado sutil */
+            border-radius: 4px;
             position: relative;
         }
 
-        /* Efecto elegante al pasar el cursor sobre la hoja */
-        .menu-page:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 30px 60px rgba(44, 53, 43, 0.1);
-        }
-
-        /* Marco interior fino clásico de restaurante */
-        .menu-page::after {
+        /* Elegante marco interior continuo */
+        .menu-wrapper::after {
             content: '';
             position: absolute;
-            top: 20px;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            border: 1px solid rgba(74, 88, 73, 0.15);
+            top: 25px;
+            bottom: 25px;
+            left: 25px;
+            right: 25px;
+            border: 1px solid rgba(74, 88, 73, 0.12);
             pointer-events: none;
             border-radius: 2px;
         }
 
-        /* --- ENCABEZADOS DE LUJO --- */
-        .header {
+        /* --- ENCABEZADO PRINCIPAL (SOLO APARECE UNA VEZ ARRIBA) --- */
+        .main-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid var(--green-primary);
-            padding-bottom: 20px;
-            margin-bottom: 45px;
+            padding-bottom: 25px;
+            margin-bottom: 60px;
             position: relative;
             z-index: 2;
         }
 
         .logo-box {
             background-color: var(--green-primary);
-            color: var(--bg-card);
+            color: var(--bg-menu);
             padding: 12px 45px;
             letter-spacing: 4px;
             text-transform: uppercase;
@@ -93,53 +85,69 @@
 
         .logo-box h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin: 0;
             font-weight: 400;
             line-height: 1;
         }
 
-        .brand-subtitle {
+        .brand-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             color: var(--green-primary);
             font-style: italic;
             font-weight: 600;
             margin: 0;
         }
 
-        .section-header-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.6rem;
-            color: var(--green-primary);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin: 0;
-            font-weight: 600;
+        /* --- SEPARADORES DE BLOQUES (SECCIONES GENERALES) --- */
+        .menu-section {
+            margin-bottom: 70px;
+            position: relative;
+            z-index: 2;
         }
 
-        /* --- ESTRUCTURA DE CONTENIDO --- */
+        /* Título grande para marcar los cambios de sección de manera corrida */
+        .section-separator-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            color: var(--green-primary);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 600;
+            margin: 0 0 40px 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Líneas de diseño al lado de los títulos de los bloques */
+        .section-separator-title::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: linear-gradient(to right, rgba(74, 88, 73, 0.3), rgba(74, 88, 73, 0));
+        }
+
+        /* --- REJILLA DE PLATILLOS (GRID) --- */
         .menu-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
-            position: relative;
-            z-index: 2;
         }
 
         .column {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 35px;
         }
 
-        /* Divisor vertical refinado */
-        .vertical-divider {
-            border-right: 1px solid rgba(74, 88, 73, 0.2);
+        .divider-right {
+            border-right: 1px solid rgba(74, 88, 73, 0.15);
             padding-right: 25px;
         }
 
-        /* --- PLATILLOS CON DISEÑO DE LÍNEA DE PUNTOS --- */
+        /* --- DISEÑO DE PLATILLOS (CON LÍNEA DE PUNTOS) --- */
         .dish {
             position: relative;
         }
@@ -153,32 +161,31 @@
 
         .dish-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.55rem;
+            font-size: 1.6rem;
             color: var(--green-primary);
             margin: 0;
             font-weight: 600;
-            background: var(--bg-card);
+            background: var(--bg-menu);
             padding-right: 8px;
             z-index: 1;
         }
 
-        /* Efecto de puntos guías clásicos (...) entre platillo y precio */
         .dish-dots {
             flex-grow: 1;
-            border-bottom: 1px dotted rgba(74, 88, 73, 0.4);
+            border-bottom: 1px dotted rgba(74, 88, 73, 0.35);
             margin-bottom: 5px;
             position: relative;
             top: -2px;
         }
 
         .dish-price {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 500;
             color: var(--text-dark);
-            background: var(--bg-card);
+            background: var(--bg-menu);
             padding-left: 8px;
             z-index: 1;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .dish-description {
@@ -189,61 +196,89 @@
             font-weight: 300;
         }
 
-        /* --- SUBTÍTULOS INTERNOS --- */
-        .inner-section-title {
+        /* --- SUB-TÍTULOS INTERNOS --- */
+        .inner-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: var(--green-primary);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin: 10px 0 15px 0;
+            margin: 5px 0 20px 0;
             font-weight: 600;
-            border-bottom: 1px solid rgba(74, 88, 73, 0.2);
-            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(74, 88, 73, 0.15);
+            padding-bottom: 6px;
         }
 
-        /* --- EXTRAS Y SECCIONES COMPACTAS --- */
+        /* --- ELEMENTOS DE EXTRAS --- */
         .extra-item {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             font-size: 0.95rem;
-            font-weight: 400;
         }
 
         .extra-item span:first-child {
-            background: var(--bg-card);
-            padding-right: 6px;
-            z-index: 1;
             color: var(--text-muted);
+            background: var(--bg-menu);
+            padding-right: 6px;
         }
 
         .extra-item span:last-child {
-            background: var(--bg-card);
-            padding-left: 6px;
-            z-index: 1;
             font-weight: 500;
+            background: var(--bg-menu);
+            padding-left: 6px;
         }
 
-        /* --- LISTAS ESTILIZADAS con viñetas personalizadas --- */
-        .custom-bullet-list {
+        /* --- OMELETTES CON DISEÑO PREMIUM --- */
+        .omelette-box {
+            border-left: 2px solid var(--gold-subtle);
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: var(--green-primary);
+        }
+
+        /* --- LISTAS CON VIÑETAS (SALSAS, BATIDOS) --- */
+        .tags-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
             list-style: none;
             padding: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
+            margin: 15px 0 0 0;
         }
 
-        .custom-bullet-list li {
+        .tags-list li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            background: rgba(113, 131, 112, 0.06);
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(74, 88, 73, 0.08);
+        }
+
+        .bullet-list-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .bullet-list-grid li {
             position: relative;
             padding-left: 20px;
             font-size: 0.95rem;
             color: var(--text-muted);
         }
 
-        .custom-bullet-list li::before {
+        .bullet-list-grid li::before {
             content: "◆";
             position: absolute;
             left: 0;
@@ -252,399 +287,313 @@
             font-size: 0.7rem;
         }
 
-        /* Lista horizontal (como las bases o las salsas) */
-        .horizontal-bullet-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            list-style: none;
-            padding: 0;
-            margin: 15px 0 0 0;
-        }
-
-        .horizontal-bullet-list li {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: 500;
-            background: rgba(113, 131, 112, 0.08);
-            padding: 6px 16px;
-            border-radius: 20px;
-            border: 1px solid rgba(74, 88, 73, 0.1);
-        }
-
-        /* --- OMELETTES ESPECÍFICOS --- */
-        .omelette-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 10px;
-        }
-
-        .omelette-item {
-            border-left: 2px solid var(--gold-subtle);
-            padding-left: 15px;
-        }
-
-        .highlight-text {
-            font-weight: 600;
-            color: var(--green-primary);
-        }
-
-        /* --- SECCIÓN INTEGRADA PARA BATIDOS --- */
-        .full-width-section {
+        /* --- SECCIÓN COMPLETA DE BATIDOS --- */
+        .protein-block {
             grid-column: span 2;
             margin-top: 20px;
-            border-top: 1px dashed rgba(74, 88, 73, 0.3);
-            padding-top: 30px;
+            border-top: 1px dashed rgba(74, 88, 73, 0.25);
+            padding-top: 35px;
         }
 
-        .columns-inner {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 15px;
-        }
-
-        .center-flex {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 25px;
-        }
-
-        /* --- LÍNEAS DIVISORIAS HORIZONTALES --- */
-        hr.premium-hr {
+        /* --- REFINAMIENTOS DE LÍNEAS EN DISEÑO CORRIDO --- */
+        hr.premium-divider {
             border: 0;
             height: 1px;
-            background-image: linear-gradient(to right, rgba(194,178,154,0), rgba(194,178,154,0.7), rgba(194,178,154,0));
-            margin: 30px 0;
+            background-image: linear-gradient(to right, rgba(194,178,154,0), rgba(194,178,154,0.6), rgba(194,178,154,0));
+            margin: 40px 0;
         }
 
-        /* --- RESPONSIVO PARA SMARTPHONES --- */
+        /* --- RESPONSIVO PARA MÓVILES --- */
         @media (max-width: 768px) {
-            body {
-                padding: 20px 10px;
-                gap: 30px;
-            }
-            .menu-page {
-                padding: 30px 20px;
-            }
-            .menu-page::after {
-                top: 10px;
-                bottom: 10px;
-                left: 10px;
-                right: 10px;
-            }
-            .header {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-                text-align: center;
-            }
-            .menu-grid, .columns-inner {
-                grid-template-columns: 1fr;
-                gap: 35px;
-            }
-            .vertical-divider {
-                border-right: none;
-                border-bottom: 1px solid rgba(74, 88, 73, 0.2);
-                padding-right: 0;
-                padding-bottom: 35px;
-            }
-            .full-width-section {
-                grid-column: span 1;
-            }
-            .center-flex {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
+            body { padding: 20px 10px; }
+            .menu-wrapper { padding: 40px 25px; }
+            .main-header { flex-direction: column; gap: 15px; text-align: center; }
+            .menu-grid, .bullet-list-grid { grid-template-columns: 1fr; gap: 35px; }
+            .divider-right { border-right: none; border-bottom: 1px solid rgba(74, 88, 73, 0.15); padding-right: 0; padding-bottom: 35px; }
+            .protein-block { grid-column: span 1; }
         }
     </style>
 </head>
 <body>
 
-    <div class="menu-page">
-        <header class="header">
+    <div class="menu-wrapper">
+        
+        <!-- ENCABEZADO PRINCIPAL (ÚNICO) -->
+        <header class="main-header">
             <div class="logo-box">
                 <h1>Menú</h1>
             </div>
-            <div class="brand-subtitle">Dos Tiempos</div>
+            <div class="brand-title">Dos Tiempos</div>
         </header>
 
-        <div class="menu-grid">
-            <div class="column vertical-divider">
-                <div class="dish">
-                    <div class="dish-header">
-                        <h3 class="dish-title">Chilaquiles</h3>
-                        <div class="dish-dots"></div>
-                        <span class="dish-price">$110</span>
+        <!-- ================= SECCIÓN 1: DE LA CASA ================= -->
+        <section class="menu-section">
+            <h2 class="section-separator-title">Platos Fuertes</h2>
+            
+            <div class="menu-grid">
+                <!-- Columna Izquierda -->
+                <div class="column divider-right">
+                    <div class="dish">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Chilaquiles</h3>
+                            <div class="dish-dots"></div>
+                            <span class="dish-price">$110</span>
+                        </div>
+                        <p class="dish-description">Totopos bañados en salsa de su elección, con queso mozzarella, crema, cilantro y cebolla morada, acompañados de frijoles.</p>
                     </div>
-                    <p class="dish-description">Totopos bañados en salsa de su elección, con queso mozzarella, crema, cilantro y cebolla morada, acompañados de frijoles.</p>
-                </div>
 
-                <div class="dish">
-                    <div class="dish-header">
-                        <h3 class="dish-title">Chilakillers</h3>
-                        <div class="dish-dots"></div>
-                        <span class="dish-price">$180</span>
+                    <div class="dish">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Chilakillers</h3>
+                            <div class="dish-dots"></div>
+                            <span class="dish-price">$180</span>
+                        </div>
+                        <p class="dish-description">Chilaquiles en salsa de su elección acompañados de huevo al gusto, pollo y chicharrón.</p>
                     </div>
-                    <p class="dish-description">Chilaquiles en salsa de su elección acompañados de huevo al gusto, pollo y chicharrón.</p>
-                </div>
 
-                <div>
-                    <h4 class="inner-section-title">Salsas</h4>
-                    <ul class="horizontal-bullet-list">
-                        <li>Salsa roja de la casa</li>
-                        <li>Chipotle</li>
-                        <li>Poblana</li>
-                        <li>De temporada</li>
-                    </ul>
-                </div>
-
-                <hr class="premium-hr">
-
-                <div>
-                    <h4 class="inner-section-title">Extras</h4>
-                    <div class="extra-item"><span>Huevo</span><div class="dish-dots"></div><span>$20</span></div>
-                    <div class="extra-item"><span>Pollo</span><div class="dish-dots"></div><span>$35</span></div>
-                    <div class="extra-item"><span>Chicharrón</span><div class="dish-dots"></div><span>$30</span></div>
-                    <div class="extra-item"><span>Aguacate</span><div class="dish-dots"></div><span>$40</span></div>
-                    <div class="extra-item"><span>Queso Mozzarella</span><div class="dish-dots"></div><span>$25</span></div>
-                </div>
-            </div>
-
-            <div class="column">
-                <div class="dish">
-                    <div class="dish-header">
-                        <h3 class="dish-title">Birriaquiles</h3>
-                        <div class="dish-dots"></div>
-                        <span class="dish-price">$175</span>
+                    <div>
+                        <h4 class="inner-title">Salsas</h4>
+                        <ul class="tags-list">
+                            <li>Salsa roja de la casa</li>
+                            <li>Chipotle</li>
+                            <li>Poblana</li>
+                            <li>De temporada</li>
+                        </ul>
                     </div>
-                    <p class="dish-description">Chilaquiles en salsa de su elección, acompañados con birria de res y frijoles.</p>
-                </div>
 
-                <div class="dish">
-                    <div class="dish-header">
-                        <h3 class="dish-title">Torta de chilaquiles</h3>
-                        <div class="dish-dots"></div>
-                        <span class="dish-price">$140</span>
+                    <hr class="premium-divider">
+
+                    <div>
+                        <h4 class="inner-title">Extras</h4>
+                        <div class="extra-item"><span>Huevo</span><div class="dish-dots"></div><span>$20</span></div>
+                        <div class="extra-item"><span>Pollo</span><div class="dish-dots"></div><span>$35</span></div>
+                        <div class="extra-item"><span>Chicharrón</span><div class="dish-dots"></div><span>$30</span></div>
+                        <div class="extra-item"><span>Aguacate</span><div class="dish-dots"></div><span>$40</span></div>
+                        <div class="extra-item"><span>Queso Mozzarella</span><div class="dish-dots"></div><span>$25</span></div>
                     </div>
-                    <p class="dish-description">Torta con totopos bañados en salsa de su elección, con queso, crema, cilantro, cebolla morada y huevo al gusto.</p>
                 </div>
 
-                <div>
-                    <h4 class="inner-section-title">Omelettes</h4>
-                    <div class="omelette-container">
-                        <div class="omelette-item">
+                <!-- Columna Derecha -->
+                <div class="column">
+                    <div class="dish">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Birriaquiles</h3>
+                            <div class="dish-dots"></div>
+                            <span class="dish-price">$175</span>
+                        </div>
+                        <p class="dish-description">Chilaquiles en salsa de su elección, acompañados con birria de res y frijoles.</p>
+                    </div>
+
+                    <div class="dish">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Torta de chilaquiles</h3>
+                            <div class="dish-dots"></div>
+                            <span class="dish-price">$140</span>
+                        </div>
+                        <p class="dish-description">Torta con totopos bañados en salsa de su elección, con queso, crema, cilantro, cebolla morada y huevo al gusto.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="inner-title">Omelettes</h4>
+                        <div class="omelette-box">
                             <div class="dish-header">
-                                <span class="highlight-text">De chilaquiles</span>
+                                <span class="highlight">De chilaquiles</span>
                                 <div class="dish-dots"></div>
                                 <span class="dish-price">$140</span>
                             </div>
                             <p class="dish-description">En salsa de su elección acompañados de papas sazonadas y frijoles.</p>
                         </div>
-                        <div class="omelette-item">
+                        <div class="omelette-box">
                             <div class="dish-header">
-                                <span class="highlight-text">Queso con jamón</span>
+                                <span class="highlight">Queso con jamón</span>
                                 <div class="dish-dots"></div>
                                 <span class="dish-price">$135</span>
                             </div>
                             <p class="dish-description">Acompañado de papas sazonadas y frijoles.</p>
                         </div>
-                        <div class="omelette-item">
+                        <div class="omelette-box">
                             <div class="dish-header">
-                                <span class="highlight-text">Queso con espinaca</span>
+                                <span class="highlight">Queso con espinaca</span>
                                 <div class="dish-dots"></div>
                                 <span class="dish-price">$135</span>
                             </div>
                             <p class="dish-description">Acompañado de papas sazonadas y frijoles.</p>
                         </div>
                     </div>
-                </div>
 
-                <div class="dish">
-                    <div class="dish-header">
-                        <h3 class="dish-title">Muffin</h3>
-                        <div class="dish-dots"></div>
-                        <span class="dish-price">$70</span>
+                    <div class="dish">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Muffin</h3>
+                            <div class="dish-dots"></div>
+                            <span class="dish-price">$70</span>
+                        </div>
+                        <p class="dish-description">Huevo al gusto, tocino y queso amarillo.</p>
                     </div>
-                    <p class="dish-description">Huevo al gusto, tocino y queso amarillo.</p>
-                </div>
 
-                <div class="dish">
-                    <div class="dish-header">
-                        <h3 class="dish-title">Avocado toast</h3>
-                        <div class="dish-dots"></div>
-                        <span class="dish-price">$140</span>
+                    <div class="dish">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Avocado toast</h3>
+                            <div class="dish-dots"></div>
+                            <span class="dish-price">$140</span>
+                        </div>
+                        <p class="dish-description">En pan de masa madre con dos huevos al gusto sobre cama de aguacate.</p>
                     </div>
-                    <p class="dish-description">En pan de masa madre con dos huevos al gusto sobre cama de aguacate.</p>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-
-    <div class="menu-page">
-        <header class="header">
-            <div class="logo-box">
-                <h1>Menú</h1>
-            </div>
-            <div class="brand-subtitle">Dos Tiempos</div>
-        </header>
-
-        <div class="menu-grid">
-            <div class="column vertical-divider">
-                <div class="dish">
-                    <div class="dish-header">
-                        <h3 class="dish-title">Waffles</h3>
-                        <div class="dish-dots"></div>
-                        <span class="dish-price">$120</span>
+        <!-- ================= SECCIÓN 2: ALGO DULCE ================= -->
+        <section class="menu-section">
+            <h2 class="section-separator-title">Desayunos Dulces</h2>
+            
+            <div class="menu-grid">
+                <!-- Columna Izquierda -->
+                <div class="column divider-right">
+                    <div class="dish">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Waffles</h3>
+                            <div class="dish-dots"></div>
+                            <span class="dish-price">$120</span>
+                        </div>
+                        <p class="dish-description">Dos waffles de plátano acompañados con fruta de temporada.</p>
                     </div>
-                    <p class="dish-description">Dos waffles de plátano con fruta fresca de la estación.</p>
+
+                    <div class="dish">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Waflecitos</h3>
+                            <div class="dish-dots"></div>
+                            <span class="dish-price">$80</span>
+                        </div>
+                        <p class="dish-description">Tres waffles chicos acompañados de fruta, crema de avellana y un toque de crema batida.</p>
+                    </div>
+
+                    <hr class="premium-divider">
+
+                    <div>
+                        <h4 class="inner-title">Extras Dulces</h4>
+                        <div class="extra-item"><span>Crema de avellana</span><div class="dish-dots"></div><span>$10</span></div>
+                        <div class="extra-item"><span>Crema de cacahuate</span><div class="dish-dots"></div><span>$10</span></div>
+                        <div class="extra-item"><span>Huevo</span><div class="dish-dots"></div><span>$20</span></div>
+                        <div class="extra-item"><span>Tocino</span><div class="dish-dots"></div><span>$40</span></div>
+                    </div>
                 </div>
 
-                <div class="dish">
-                    <div class="dish-header">
-                        <h3 class="dish-title">Waflecitos</h3>
-                        <div class="dish-dots"></div>
-                        <span class="dish-price">$80</span>
+                <!-- Columna Derecha -->
+                <div class="column">
+                    <div class="dish">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Hotcakes de proteína</h3>
+                            <div class="dish-dots"></div>
+                            <span class="dish-price">$140</span>
+                        </div>
+                        <p class="dish-description">Dos piezas preparadas con 10g de proteína c/u, servidos con fruta selecta, granola crujiente y crema de cacahuate.</p>
                     </div>
-                    <p class="dish-description">Tres waffles chicos acompañados de fruta, crema de avellana y crema batida.</p>
-                </div>
 
-                <hr class="premium-hr">
-
-                <div>
-                    <h4 class="inner-section-title">Extras Dulces</h4>
-                    <div class="extra-item"><span>Crema de avellana</span><div class="dish-dots"></div><span>$10</span></div>
-                    <div class="extra-item"><span>Crema de cacahuate</span><div class="dish-dots"></div><span>$10</span></div>
-                    <div class="extra-item"><span>Huevo</span><div class="dish-dots"></div><span>$20</span></div>
-                    <div class="extra-item"><span>Tocino</span><div class="dish-dots"></div><span>$40</span></div>
-                </div>
-            </div>
-
-            <div class="column">
-                <div class="dish">
-                    <div class="dish-header">
-                        <h3 class="dish-title">Hotcakes de proteína</h3>
-                        <div class="dish-dots"></div>
-                        <span class="dish-price">$140</span>
+                    <div class="dish">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Avena reposada</h3>
+                            <div class="dish-dots"></div>
+                            <span class="dish-price">$80</span>
+                        </div>
+                        <p class="dish-description">Avena con semillas de chía reposadas delicadamente en leche, acompañada con yogur natural y trozos de fruta.</p>
                     </div>
-                    <p class="dish-description">Dos piezas hechas con 10g de proteína cada una, acompañados de fruta, granola crujiente y crema de cacahuate natural.</p>
-                </div>
 
-                <div class="dish">
-                    <div class="dish-header">
-                        <h3 class="dish-title">Avena reposada</h3>
-                        <div class="dish-dots"></div>
-                        <span class="dish-price">$80</span>
+                    <div class="dish">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Waffle con nieve</h3>
+                            <div class="dish-dots"></div>
+                            <span class="dish-price">$100</span>
+                        </div>
+                        <p class="dish-description">Waffle de plátano complementado con una bola de nieve de vainilla fina y crema de avellana.</p>
                     </div>
-                    <p class="dish-description">Avena premium con semillas de chía reposadas en leche delicada, con yogur natural y fruta fresca.</p>
-                </div>
 
-                <div class="dish">
-                    <div class="dish-header">
-                        <h3 class="dish-title">Waffle con nieve</h3>
-                        <div class="dish-dots"></div>
-                        <span class="dish-price">$100</span>
+                    <div class="dish" style="margin-top: 10px;">
+                        <div class="dish-header">
+                            <h3 class="dish-title" style="font-style: italic; color: var(--gold-subtle);">Postre de temporada</h3>
+                        </div>
+                        <p class="dish-description">Pregunta a nuestro equipo por la propuesta dulce artesanal del mes.</p>
                     </div>
-                    <p class="dish-description">Waffle artesanal de plátano acompañado de una bola de nieve de vainilla premium con hilos de crema de avellana.</p>
-                </div>
-
-                <div class="dish" style="margin-top: 15px;">
-                    <div class="dish-header">
-                        <h3 class="dish-title" style="font-style: italic; color: var(--gold-subtle);">Postre de temporada</h3>
-                    </div>
-                    <p class="dish-description">Pregunte a su mesero por nuestra deliciosa opción exclusiva del mes.</p>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-
-    <div class="menu-page">
-        <header class="header">
-            <div class="logo-box">
-                <h1>Menú</h1>
-            </div>
-            <div class="section-header-title">Bebidas</div>
-        </header>
-
-        <div class="menu-grid">
-            <div class="column vertical-divider">
-                <h4 class="inner-section-title">Jugos naturales</h4>
-                
-                <div class="dish">
-                    <div class="dish-header">
-                        <h3 class="dish-title">Naranja</h3>
-                        <div class="dish-dots"></div>
-                        <span class="dish-price">$80</span>
+        <!-- ================= SECCIÓN 3: BEBIDAS ================= -->
+        <section class="menu-section" style="margin-bottom: 0;">
+            <h2 class="section-separator-title">Bebidas & Refrescantes</h2>
+            
+            <div class="menu-grid">
+                <!-- Columna Izquierda -->
+                <div class="column divider-right">
+                    <h4 class="inner-title">Jugos naturales</h4>
+                    
+                    <div class="dish">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Naranja</h3>
+                            <div class="dish-dots"></div>
+                            <span class="dish-price">$80</span>
+                        </div>
+                        <p class="dish-description">Jugo exprimido al momento, 100% natural.</p>
                     </div>
-                    <p class="dish-description">Extracción de naranja 100% natural y fresca del día.</p>
-                </div>
 
-                <div class="dish">
-                    <div class="dish-header">
-                        <h3 class="dish-title">Verde</h3>
-                        <div class="dish-dots"></div>
-                        <span class="dish-price">$70</span>
+                    <div class="dish">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Verde</h3>
+                            <div class="dish-dots"></div>
+                            <span class="dish-price">$70</span>
+                        </div>
+                        <p class="dish-description">Mezcla nutritiva de nopal, piña, pepino, espinaca, perejil, apio, manzana y naranja.</p>
                     </div>
-                    <p class="dish-description">Mix energético de nopal, piña, pepino, espinaca, perejil, apio, manzana y un toque de naranja.</p>
-                </div>
 
-                <div class="dish">
-                    <div class="dish-header">
-                        <h3 class="dish-title">Energético</h3>
-                        <div class="dish-dots"></div>
-                        <span class="dish-price">$70</span>
+                    <div class="dish">
+                        <div class="dish-header">
+                            <h3 class="dish-title">Energético</h3>
+                            <div class="dish-dots"></div>
+                            <span class="dish-price">$70</span>
+                        </div>
+                        <p class="dish-description">Combinación revitalizante de plátano, fresa, blueberry, piña y jugo de naranja.</p>
                     </div>
-                    <p class="dish-description">Combinación revitalizante de plátano, fresa, blueberry, piña y naranja.</p>
+
+                    <hr class="premium-divider" style="margin: 20px 0;">
+
+                    <div class="extra-item" style="font-size: 1.05rem;"><span style="color: var(--green-primary); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600;">Chocomilk</span><div class="dish-dots"></div><span>$45</span></div>
+                    <div class="extra-item" style="font-size: 1.05rem;"><span style="color: var(--green-primary); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600;">Sodas</span><div class="dish-dots"></div><span>$35</span></div>
+                    <div class="extra-item" style="font-size: 1.05rem;"><span style="color: var(--green-primary); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600;">Café americano</span><div class="dish-dots"></div><span>$45</span></div>
                 </div>
 
-                <hr class="premium-hr" style="margin: 15px 0;">
-
-                <div class="extra-item" style="font-size: 1.1rem;"><span style="color: var(--green-primary); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600;">Chocomilk</span><div class="dish-dots"></div><span>$45</span></div>
-                <div class="extra-item" style="font-size: 1.1rem;"><span style="color: var(--green-primary); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600;">Sodas</span><div class="dish-dots"></div><span>$35</span></div>
-                <div class="extra-item" style="font-size: 1.1rem;"><span style="color: var(--green-primary); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600;">Café americano</span><div class="dish-dots"></div><span>$45</span></div>
-            </div>
-
-            <div class="column">
-                <h4 class="inner-section-title">Aguas frescas</h4>
-                
-                <div class="extra-item" style="font-size: 1.1rem;"><span style="color: var(--green-primary); font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600;">Agua de jamaica</span><div class="dish-dots"></div><span>$45</span></div>
-                <div class="extra-item" style="font-size: 1.1rem;"><span style="color: var(--green-primary); font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600;">Agua de limón</span><div class="dish-dots"></div><span>$45</span></div>
-                <div class="extra-item" style="font-size: 1.1rem;"><span style="color: var(--green-primary); font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600;">Agua de temporada</span><div class="dish-dots"></div><span>$50</span></div>
-            </div>
-
-            <div class="full-width-section">
-                <div class="dish-header" style="margin-bottom: 5px;">
-                    <h3 class="inner-section-title" style="margin: 0; border: none; font-size: 2rem;">Batidos de proteína</h3>
-                    <span class="dish-price" style="font-size: 1.5rem; color: var(--green-primary); font-weight: 600;">$95</span>
+                <!-- Columna Derecha -->
+                <div class="column">
+                    <h4 class="inner-title">Aguas frescas</h4>
+                    
+                    <div class="extra-item" style="font-size: 1.05rem;"><span style="color: var(--green-primary); font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600;">Agua de jamaica</span><div class="dish-dots"></div><span>$45</span></div>
+                    <div class="extra-item" style="font-size: 1.05rem;"><span style="color: var(--green-primary); font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600;">Agua de limón</span><div class="dish-dots"></div><span>$45</span></div>
+                    <div class="extra-item" style="font-size: 1.05rem;"><span style="color: var(--green-primary); font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600;">Agua de temporada</span><div class="dish-dots"></div><span>$50</span></div>
                 </div>
-                <p class="dish-description" style="font-style: italic; font-size: 1rem; margin-bottom: 20px;">Diseña y crea tu batido personalizado:</p>
-                
-                <div class="columns-inner">
-                    <ul class="custom-bullet-list">
+
+                <!-- Fila Completa Inferior (Batidos) -->
+                <div class="protein-block">
+                    <div class="dish-header" style="margin-bottom: 0;">
+                        <h3 class="inner-title" style="margin: 0; border: none; font-size: 1.8rem;">Batidos de proteína</h3>
+                        <span class="dish-price" style="font-size: 1.4rem; color: var(--green-primary); font-weight: 600;">$95</span>
+                    </div>
+                    <p class="dish-description" style="font-style: italic; margin-bottom: 15px;">Crea tu batido ideal seleccionando tus ingredientes favoritos:</p>
+                    
+                    <ul class="bullet-list-grid">
                         <li>Plátano</li>
                         <li>Fresa</li>
                         <li>Blueberry</li>
                         <li>Fruta de temporada</li>
+                        <li>Scoop Vainilla</li>
+                        <li>Scoop Chocolate</li>
                     </ul>
-                    <ul class="custom-bullet-list">
-                        <li>Scoop de Vainilla</li>
-                        <li>Scoop de Chocolate</li>
-                    </ul>
-                </div>
 
-                <div class="center-flex">
-                    <ul class="horizontal-bullet-list" style="margin: 0; justify-content: center;">
-                        <li>Con Base de agua</li>
-                        <li>Con Base de leche</li>
+                    <ul class="tags-list" style="justify-content: center; margin-top: 25px;">
+                        <li>Base de agua</li>
+                        <li>Base de leche</li>
                     </ul>
                 </div>
             </div>
-        </div>
+        </section>
+
     </div>
 
 </body>
