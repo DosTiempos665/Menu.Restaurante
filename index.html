@@ -122,6 +122,101 @@ header p{
         white-space:nowrap;
     }
 
+   /* BATIDOS ESTILO ESPECIAL */
+
+.batido-seccion{
+    background:#fff;
+    margin-top:25px;
+    padding:30px;
+    border-radius:10px;
+}
+
+.batido-header{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    margin-bottom:10px;
+}
+
+.batido-header h2{
+    border:none;
+    padding:0;
+    margin:0;
+    color:#7A8F84;
+    font-size:42px;
+    font-weight:700;
+}
+
+.precio-batido{
+    font-size:38px;
+    color:#7A8F84;
+    font-weight:300;
+}
+
+.subtitulo-batido{
+    text-align:center;
+    color:#7A8F84;
+    font-size:28px;
+    margin-bottom:30px;
+}
+
+.opciones-batido{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+.opciones-batido ul{
+    list-style:disc;
+    padding-left:40px;
+    color:#7A8F84;
+}
+
+.opciones-batido li{
+    font-size:26px;
+    margin-bottom:18px;
+}
+
+.bases-batido{
+    display:flex;
+    justify-content:center;
+    gap:100px;
+    margin-top:40px;
+    flex-wrap:wrap;
+    color:#7A8F84;
+    font-size:28px;
+}
+
+@media(max-width:768px){
+
+    .batido-header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .batido-header h2{
+        font-size:32px;
+    }
+
+    .precio-batido{
+        font-size:28px;
+    }
+
+    .subtitulo-batido{
+        font-size:22px;
+    }
+
+    .opciones-batido li{
+        font-size:20px;
+    }
+
+    .bases-batido{
+        gap:20px;
+        font-size:20px;
+    }
+}
+   
     footer{
         text-align:center;
         padding:20px;
@@ -288,28 +383,38 @@ header p{
             </div>
             <span class="precio">$50</span>
         </div>
+      <div class="batido-seccion">
 
-        <h3 class="subcategoria">Batidos de Proteína</h3>
+    <div class="batido-header">
+        <h2>Batidos de Proteína</h2>
+        <span class="precio-batido">$95</span>
+    </div>
 
-        <div class="item">
-            <div>
-                <span class="nombre">Energético</span>
-                <span class="descripcion">
-                    Proteína, plátano, avena y leche.
-                </span>
-            </div>
-            <span class="precio">$75</span>
-        </div>
+    <p class="subtitulo-batido">(Crea tu batido)</p>
 
-        <div class="item">
-            <div>
-                <span class="nombre">Chocolate Protein</span>
-                <span class="descripcion">
-                    Proteína sabor chocolate mezclada con leche y hielo.
-                </span>
-            </div>
-            <span class="precio">$85</span>
-        </div>
+    <div class="opciones-batido">
+
+        <ul>
+            <li>Plátano</li>
+            <li>Fresa</li>
+            <li>Blueberry</li>
+            <li>Fruta de temporada</li>
+        </ul>
+
+        <ul>
+            <li>Scoop vainilla</li>
+            <li>Scoop chocolate</li>
+        </ul>
+
+    </div>
+
+    <div class="bases-batido">
+        <span>• Base de agua</span>
+        <span>• Base de leche</span>
+    </div>
+
+</div>
+        
     </section>
 
     <!-- EXTRAS -->
