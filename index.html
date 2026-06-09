@@ -12,14 +12,14 @@
     <style>
         /* --- VARIABLES DE DISEÑO --- */
         :root {
-            --bg-global: radial-gradient(circle at top, #fcfbfa 0%, #f1eee4 100%); /* Fondo con textura de luz */
-            --bg-menu: #ffffff;         /* Contenedor blanco puro para contraste */
-            --green-primary: #3b473a;   /* Verde oliva profundo y formal */
-            --green-accent: #5c6e5a;    /* Verde medio */
-            --gold-accent: #b89c66;     /* Dorado elegante para dar vida */
-            --gold-subtle: #d6caaf;     /* Dorado suave para líneas */
-            --text-dark: #242b23;       /* Texto principal legible */
-            --text-muted: #556153;      /* Descripciones */
+            --bg-global: radial-gradient(circle at top, #fcfbfa 0%, #f1eee4 100%);
+            --bg-menu: #ffffff;
+            --green-primary: #3b473a;
+            --green-accent: #5c6e5a;
+            --gold-accent: #b89c66;
+            --gold-subtle: #d6caaf;
+            --text-dark: #242b23;
+            --text-muted: #556153;
             --shadow-premium: 0 20px 60px rgba(59, 71, 58, 0.07), 0 1px 3px rgba(0,0,0,0.02);
         }
 
@@ -72,10 +72,14 @@
             box-shadow: 0 4px 15px rgba(59, 71, 58, 0.2);
         }
 
-        /* Efecto Hover en Botón Inactivo */
         .btn-menu:not(.active):hover {
             background-color: rgba(184, 156, 102, 0.1);
             color: var(--gold-accent);
+        }
+
+        /* Clase utilitaria para ocultar el botón por completo */
+        .btn-menu.hidden-btn {
+            display: none !important;
         }
 
         /* --- CONTENEDOR ÚNICO CONTINUO --- */
@@ -90,7 +94,6 @@
             border: 1px solid rgba(184, 156, 102, 0.15);
         }
 
-        /* Elegante marco interior decorativo */
         .menu-wrapper::after {
             content: '';
             position: absolute;
@@ -397,14 +400,14 @@
 <body>
 
     <!-- BOTONES SUPERIORES DE INTERCAMBIO -->
-    <div class="menu-controls">
+    <div class="menu-controls" id="controls-container">
         <button class="btn-menu active" onclick="switchMenu('regular', this)">Menú Tradicional</button>
-        <button class="btn-menu" onclick="switchMenu('especial', this)">Menú Especial</button>
+        <button class="btn-menu" id="btn-especial" onclick="switchMenu('especial', this)">Menú Especial</button>
     </div>
 
     <div class="menu-wrapper">
         
-        <!-- ENCABEZADO PRINCIPAL (FIJO) -->
+        <!-- ENCABEZADO PRINCIPAL -->
         <header class="main-header">
             <h1>Menú</h1>
             <div class="brand-title">Dos Tiempos</div>
@@ -598,7 +601,6 @@
 
         <!-- ================= MUESTRA 2: MENÚ ESPECIAL ================= -->
         <div id="menu-especial" class="menu-content hidden">
-            <!-- SECCIÓN DE AUTOR / RECOMENDACIONES -->
             <section class="menu-section">
                 <h2 class="section-separator-title">Entradas Selectas</h2>
                 <div class="menu-grid">
@@ -680,23 +682,41 @@
 
     </div>
 
-    <!-- SCRIPT INTERACTIVO DE CONMUTACIÓN -->
+    <!-- SCRIPT INTERACTIVO Y CONTROL DE MENÚ -->
     <script>
+        // =================================================================
+        // CONTROLADOR DE DISPONIBILIDAD (EL INTERRUPTOR)
+        // Cambia a 'true' para ACTIVAR o 'false' para DESACTIVAR el Menú Especial.
+        // =================================================================
+        const menuEspecialDisponible = false; 
+
+        
+        // Lógica automática al cargar la página
+        document.addEventListener("DOMContentLoaded", function() {
+            const btnEspecial = document.getElementById('btn-especial');
+            const controlsContainer = document.getElementById('controls-container');
+
+            if (!menuEspecialDisponible) {
+                // Si está desactivado, escondemos por completo el botón del menú especial
+                btnEspecial.classList.add('hidden-btn');
+                
+                // Opcional: Ocultamos también toda la barra si solo queda un menú visible
+                controlsContainer.style.display = 'none'; 
+            }
+        });
+
+        // Función para alternar menús
         function switchMenu(menuType, buttonElement) {
-            // Quitar clase activa de todos los botones
             const buttons = document.querySelectorAll('.btn-menu');
             buttons.forEach(btn => btn.classList.remove('active'));
             
-            // Añadir clase activa al botón presionado
             buttonElement.classList.add('active');
 
-            // Ocultar todos los bloques de contenido
             const contents = document.querySelectorAll('.menu-content');
             contents.forEach(content => {
                 content.classList.add('hidden');
             });
 
-            // Mostrar el bloque seleccionado
             const activeContent = document.getElementById('menu-' + menuType);
             activeContent.classList.remove('hidden');
         }
