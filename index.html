@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú - Dos Tiempos</title>
-    <!-- Fuentes tipográficas refinadas de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -77,7 +76,6 @@
             color: var(--gold-accent);
         }
 
-        /* Clase utilitaria para ocultar el botón por completo */
         .btn-menu.hidden-btn {
             display: none !important;
         }
@@ -399,7 +397,6 @@
 </head>
 <body>
 
-    <!-- BOTONES SUPERIORES DE INTERCAMBIO -->
     <div class="menu-controls" id="controls-container">
         <button class="btn-menu active" onclick="switchMenu('regular', this)">Menú Tradicional</button>
         <button class="btn-menu" id="btn-especial" onclick="switchMenu('especial', this)">Menú Especial</button>
@@ -407,16 +404,13 @@
 
     <div class="menu-wrapper">
         
-        <!-- ENCABEZADO PRINCIPAL -->
         <header class="main-header">
             <h1>Menú</h1>
             <div class="brand-title">Dos Tiempos</div>
             <div class="header-decor">✦ ✦ ✦</div>
         </header>
 
-        <!-- ================= MUESTRA 1: MENÚ TRADICIONAL ================= -->
         <div id="menu-regular" class="menu-content">
-            <!-- SECCIÓN 1: PLATOS FUERTES -->
             <section class="menu-section">
                 <h2 class="section-separator-title">Platos Fuertes</h2>
                 <div class="menu-grid">
@@ -438,9 +432,9 @@
                             <p class="dish-description">Chilaquiles en salsa de su elección acompañados de huevo al gusto, pollo y chicharrón.</p>
                         </div>
                         <div>
-                            <h4 class="inner-title">Salsas de la casa</h4>
+                            <h4 class="inner-title">Salsas</h4>
                             <ul class="tags-list">
-                                <li>Salsa roja</li><li>Chipotle</li><li>Poblana</li><li>De temporada</li>
+                                <li>Salsa roja de la casa</li><li>Chipotle</li><li>Poblana</li><li>De temporada</li>
                             </ul>
                         </div>
                         <hr class="premium-divider">
@@ -471,7 +465,7 @@
                             <p class="dish-description">Torta con totopos bañados en salsa de su elección, con queso, crema, cilantro, cebolla morada y huevo al gusto.</p>
                         </div>
                         <div>
-                            <h4 class="inner-title">Omelettes</h4>
+                            <h4 class="inner-title">Omelette</h4>
                             <div class="omelette-box"><div class="dish-header"><span class="highlight">De chilaquiles</span><div class="dish-dots"></div><span class="dish-price">$140</span></div><p class="dish-description">En salsa de su elección acompañados de papas sazonadas y frijoles.</p></div>
                             <div class="omelette-box"><div class="dish-header"><span class="highlight">Queso con jamón</span><div class="dish-dots"></div><span class="dish-price">$135</span></div><p class="dish-description">Acompañado de papas sazonadas y frijoles.</p></div>
                             <div class="omelette-box"><div class="dish-header"><span class="highlight">Queso con espinaca</span><div class="dish-dots"></div><span class="dish-price">$135</span></div><p class="dish-description">Acompañado de papas sazonadas y frijoles.</p></div>
@@ -496,7 +490,6 @@
                 </div>
             </section>
 
-            <!-- SECCIÓN 2: DESAYUNOS DULCES -->
             <section class="menu-section">
                 <h2 class="section-separator-title">Desayunos Dulces</h2>
                 <div class="menu-grid">
@@ -507,7 +500,7 @@
                                 <div class="dish-dots"></div>
                                 <span class="dish-price">$120</span>
                             </div>
-                            <p class="dish-description">Dos waffles de plátano acompañados con fruta de temporada.</p>
+                            <p class="dish-description">Dos waffles de plátano con fruta.</p>
                         </div>
                         <div class="dish">
                             <div class="dish-header">
@@ -515,11 +508,11 @@
                                 <div class="dish-dots"></div>
                                 <span class="dish-price">$80</span>
                             </div>
-                            <p class="dish-description">Tres waffles chicos acompañados de fruta, crema de avellana y un toque de crema batida.</p>
+                            <p class="dish-description">Tres waffles chicos acompañados de fruta, crema de avellana y crema batida.</p>
                         </div>
                         <hr class="premium-divider">
                         <div>
-                            <h4 class="inner-title">Extras Dulces</h4>
+                            <h4 class="inner-title">Extras</h4>
                             <div class="extra-item"><span>Crema de avellana</span><div class="dish-dots"></div><span>$10</span></div>
                             <div class="extra-item"><span>Crema de cacahuate</span><div class="dish-dots"></div><span>$10</span></div>
                             <div class="extra-item"><span>Huevo</span><div class="dish-dots"></div><span>$20</span></div>
@@ -533,7 +526,7 @@
                                 <div class="dish-dots"></div>
                                 <span class="dish-price">$140</span>
                             </div>
-                            <p class="dish-description">Dos piezas preparadas con 10g de proteína c/u, servidos con fruta selecta, granola crujiente y crema de cacahuate.</p>
+                            <p class="dish-description">Dos piezas con 10g de proteína c/u acompañados de fruta, granola y crema de cacahuate.</p>
                         </div>
                         <div class="dish">
                             <div class="dish-header">
@@ -541,7 +534,7 @@
                                 <div class="dish-dots"></div>
                                 <span class="dish-price">$80</span>
                             </div>
-                            <p class="dish-description">Avena con semillas de chía reposadas delicadamente en leche, acompañada con yogur natural y trozos de fruta.</p>
+                            <p class="dish-description">Avena con chía reposadas en leche con yogur natural y fruta.</p>
                         </div>
                         <div class="dish">
                             <div class="dish-header">
@@ -549,27 +542,25 @@
                                 <div class="dish-dots"></div>
                                 <span class="dish-price">$100</span>
                             </div>
-                            <p class="dish-description">Waffle de plátano complementado con una bola de nieve de vainilla fina y crema de avellana.</p>
+                            <p class="dish-description">Waffle de plátano acompañado de nieve de vainilla con crema de avellana.</p>
                         </div>
-                        <div class="dish" style="margin-top: 10px;">
+                        <div class="dish" style="margin-top: 15px;">
                             <div class="dish-header">
-                                <h3 class="dish-title" style="font-style: italic; color: var(--gold-accent);">Postre de temporada</h3>
+                                <h3 class="dish-title" style="font-style: italic; color: var(--gold-accent); border: none;">Postre de temporada</h3>
                             </div>
-                            <p class="dish-description">Pregunta a nuestro equipo por la propuesta dulce artesanal del mes.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- SECCIÓN 3: BEBIDAS -->
             <section class="menu-section" style="margin-bottom: 0;">
-                <h2 class="section-separator-title">Bebidas &amp; Refrescantes</h2>
+                <h2 class="section-separator-title">Bebidas</h2>
                 <div class="menu-grid">
                     <div class="column divider-right">
                         <h4 class="inner-title">Jugos naturales</h4>
-                        <div class="dish"><div class="dish-header"><h3 class="dish-title">Naranja</h3><div class="dish-dots"></div><span class="dish-price">$80</span></div><p class="dish-description">Jugo exprimido al momento, 100% natural.</p></div>
-                        <div class="dish"><div class="dish-header"><h3 class="dish-title">Verde</h3><div class="dish-dots"></div><span class="dish-price">$70</span></div><p class="dish-description">Mezcla nutritiva de nopal, piña, pepino, espinaca, perejil, apio, manzana y naranja.</p></div>
-                        <div class="dish"><div class="dish-header"><h3 class="dish-title">Energético</h3><div class="dish-dots"></div><span class="dish-price">$70</span></div><p class="dish-description">Combinación revitalizante de plátano, fresa, blueberry, piña y jugo de naranja.</p></div>
+                        <div class="dish"><div class="dish-header"><h3 class="dish-title">Naranja</h3><div class="dish-dots"></div><span class="dish-price">$80</span></div><p class="dish-description">Jugo de naranja natural.</p></div>
+                        <div class="dish"><div class="dish-header"><h3 class="dish-title">Verde</h3><div class="dish-dots"></div><span class="dish-price">$70</span></div><p class="dish-description">Nopal, piña, pepino, espinaca, perejil, apio, manzana y naranja.</p></div>
+                        <div class="dish"><div class="dish-header"><h3 class="dish-title">Energético</h3><div class="dish-dots"></div><span class="dish-price">$70</span></div><p class="dish-description">Plátano, fresa, blueberry, piña y naranja.</p></div>
                         <hr class="premium-divider" style="margin: 20px 0;">
                         <div class="extra-item" style="font-size: 1.05rem;"><span style="color: var(--green-primary); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600;">Chocomilk</span><div class="dish-dots"></div><span>$45</span></div>
                         <div class="extra-item" style="font-size: 1.05rem;"><span style="color: var(--green-primary); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600;">Sodas</span><div class="dish-dots"></div><span>$35</span></div>
@@ -586,12 +577,12 @@
                             <h3 class="inner-title" style="margin: 0; border: none; font-size: 1.8rem; color: var(--green-primary);">Batidos de proteína</h3>
                             <span class="dish-price" style="font-size: 1.5rem;">$95</span>
                         </div>
-                        <p class="dish-description" style="font-style: italic; margin-bottom: 20px;">Crea tu batido ideal seleccionando tus ingredientes favoritos:</p>
+                        <p class="dish-description" style="font-style: italic; margin-bottom: 20px;">(Crea tu batido)</p>
                         <ul class="bullet-list-grid">
-                            <li>Plátano</li><li>Fresa</li><li>Blueberry</li><li>Fruta de temporada</li><li>Scoop Vainilla</li><li>Scoop Chocolate</li>
-                        </ul>
-                        <ul class="tags-list" style="justify-content: center; margin-top: 25px;">
-                            <li>Base de agua</li><li>Base de leche</li>
+                            <li>Plátano</li><li>Scoop vainilla</li>
+                            <li>Fresa</li><li>Scoop chocolate</li>
+                            <li>Blueberry</li><li>Base de agua</li>
+                            <li>Fruta de temporada</li><li>Base de leche</li>
                         </ul>
                     </div>
                 </div>
@@ -599,81 +590,44 @@
         </div>
 
 
-        <!-- ================= MUESTRA 2: MENÚ ESPECIAL ================= -->
         <div id="menu-especial" class="menu-content hidden">
-            <section class="menu-section">
-                <h2 class="section-separator-title">Entradas Selectas</h2>
-                <div class="menu-grid">
-                    <div class="column divider-right">
-                        <div class="dish">
-                            <div class="dish-header">
-                                <h3 class="dish-title">Tartar de Aguacate y Salmón</h3>
-                                <div class="dish-dots"></div>
-                                <span class="dish-price">$195</span>
-                            </div>
-                            <p class="dish-description">Cama del mejor aguacate local macerado, cubos de salmón fresco curado en casa con toques cítricos y aderezo artesanal.</p>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="dish">
-                            <div class="dish-header">
-                                <h3 class="dish-title">Crema de Huitlacoche</h3>
-                                <div class="dish-dots"></div>
-                                <span class="dish-price">$130</span>
-                            </div>
-                            <p class="dish-description">Una sedosa y reconfortante sopa tradicional infusionada con granos de elote tierno y aceite premium de trufa.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="menu-section">
-                <h2 class="section-separator-title">Fuertes Especiales</h2>
-                <div class="menu-grid">
-                    <div class="column divider-right">
-                        <div class="dish">
-                            <div class="dish-header">
-                                <h3 class="dish-title">Chilaquiles de la casa en Salsa Negra</h3>
-                                <div class="dish-dots"></div>
-                                <span class="dish-price">$210</span>
-                            </div>
-                            <p class="dish-description">Nuestra receta insignia. Totopos de maíz azul bañados en salsa secreta a base de chiles tatemados, acompañados de jugosa arrachera premium (150g).</p>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="dish">
-                            <div class="dish-header">
-                                <h3 class="dish-title">Pechuga en Mole de Higo</h3>
-                                <div class="dish-dots"></div>
-                                <span class="dish-price">$245</span>
-                            </div>
-                            <p class="dish-description">Suprema de pollo a la parrilla bañada en mole dulce artesanal de higo y almendras tostadas, balanceado a la perfección.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <section class="menu-section" style="margin-bottom: 0;">
-                <h2 class="section-separator-title">Postres de Autor</h2>
+                <h2 class="section-separator-title">Especialidades</h2>
                 <div class="menu-grid">
                     <div class="column divider-right">
                         <div class="dish">
                             <div class="dish-header">
-                                <h3 class="dish-title">Volcán de Cajeta de Celaya</h3>
+                                <h3 class="dish-title">Smash burgers</h3>
                                 <div class="dish-dots"></div>
-                                <span class="dish-price">$125</span>
+                                <span class="dish-price">$180</span>
                             </div>
-                            <p class="dish-description">Bizcocho tibio con corazón líquido de auténtica cajeta artesanal, servido con helado de vainilla de Papantla.</p>
+                            <p class="dish-description">Carne de res, queso, cebolla caramelizada, tocino, tomate, lechuga y aderezo de la casa acompañada de papas.</p>
+                        </div>
+                        <div class="dish">
+                            <div class="dish-header">
+                                <h3 class="dish-title">Dirty fries</h3>
+                                <div class="dish-dots"></div>
+                                <span class="dish-price">$100</span>
+                            </div>
+                            <p class="dish-description">Papas a la francesa bañadas en queso amarillo, tocino, cebolla caramelizada y aderezo de la casa.</p>
                         </div>
                     </div>
                     <div class="column">
                         <div class="dish">
                             <div class="dish-header">
-                                <h3 class="dish-title">Mousse de Maracuyá y Mezcal</h3>
+                                <h3 class="dish-title">Churros</h3>
                                 <div class="dish-dots"></div>
-                                <span class="dish-price">$115</span>
+                                <span class="dish-price">$120</span>
                             </div>
-                            <p class="dish-description">Textura ligera y refrescante de fruta de la pasión con notas sutiles y ahumadas de mezcal espadín de Oaxaca.</p>
+                            <p class="dish-description">Churros encanelados, nieve de vainilla y crema de avellana.</p>
+                        </div>
+                        <div class="dish">
+                            <div class="dish-header">
+                                <h3 class="dish-title">Crepas</h3>
+                                <div class="dish-dots"></div>
+                                <span class="dish-price">$120</span>
+                            </div>
+                            <p class="dish-description">Crepa con crema de avellana, fresa, plátano y nieve.</p>
                         </div>
                     </div>
                 </div>
@@ -682,30 +636,24 @@
 
     </div>
 
-    <!-- SCRIPT INTERACTIVO Y CONTROL DE MENÚ -->
     <script>
         // =================================================================
-        // CONTROLADOR DE DISPONIBILIDAD (EL INTERRUPTOR)
-        // Cambia a 'true' para ACTIVAR o 'false' para DESACTIVAR el Menú Especial.
+        // VARIABLE DE CONTROL: Cambia a 'true' para ACTIVAR o 'false' para OCULTAR.
         // =================================================================
         const menuEspecialDisponible = true; 
 
-        
-        // Lógica automática al cargar la página
+        // Lógica de visualización del botón
         document.addEventListener("DOMContentLoaded", function() {
             const btnEspecial = document.getElementById('btn-especial');
             const controlsContainer = document.getElementById('controls-container');
 
             if (!menuEspecialDisponible) {
-                // Si está desactivado, escondemos por completo el botón del menú especial
                 btnEspecial.classList.add('hidden-btn');
-                
-                // Opcional: Ocultamos también toda la barra si solo queda un menú visible
-                controlsContainer.style.display = 'none'; 
+                controlsContainer.style.display = 'none'; // Esconde barra si no hay especial
             }
         });
 
-        // Función para alternar menús
+        // Alternador de pestañas
         function switchMenu(menuType, buttonElement) {
             const buttons = document.querySelectorAll('.btn-menu');
             buttons.forEach(btn => btn.classList.remove('active'));
